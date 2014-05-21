@@ -6,7 +6,7 @@
 /*   By: apantiez <apantiez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/27 22:28:15 by apantiez          #+#    #+#             */
-/*   Updated: 2014/05/18 16:24:05 by mschmit          ###   ########.fr       */
+/*   Updated: 2014/05/21 15:48:53 by apantiez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char	*ft_glue(char **tmp)
 		s = ft_strcat(s, tmp[i]);
 		i++;
 	}
-0	return (s);
+	return (s);
 }
 
 char	*ft_news(char **tmp)
