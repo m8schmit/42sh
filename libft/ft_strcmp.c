@@ -6,7 +6,7 @@
 /*   By: jmancero <jmancero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/27 20:25:59 by jmancero          #+#    #+#             */
-/*   Updated: 2014/03/27 20:25:59 by jmancero         ###   ########.fr       */
+/*   Updated: 2014/05/22 12:10:32 by mschmit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ int		ft_strcmp(const char *s1, const char *s2)
 			i++;
 		}
 	}
-	return (0);
+	return (-1);
 }

@@ -1,4 +1,15 @@
-42sh
-====
+virer ctrl+z/fg
 
-42sh final version.
+pwd qui merde, cd - ?
+
+les headers a changer...
+
+verifier et refaire env, setenv, unsetenv (et putenv ?)
+
+comprendre ces putains de termcaps
+
+le buffer du multi-lignes
+
+parser: modifier gestion des ""
+
+ajouter un return -1 a strcmp (strncmp ?)
