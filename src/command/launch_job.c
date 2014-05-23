@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   launch_job.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apantiez <apantiez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pdjamei <pdjamei@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/03/27 21:01:26 by apantiez          #+#    #+#             */
-/*   Updated: 2014/03/27 21:44:33 by apantiez         ###   ########.fr       */
+/*   Created: 2014/03/27 19:21:41 by pdjamei           #+#    #+#             */
+/*   Updated: 2014/03/27 19:21:46 by pdjamei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void		launch_job(t_job *j, t_gen *envp)
 		if (p->next)
 		{
 			if (pipe(mypipe) < 0)
-				ft_dprintf(2, "42sh : error pipe \n");
+				ft_putstr("42sh : error pipe \n");
 			p->FD_OUT = mypipe[1];
 			p->next->FD_IN = mypipe[0];
 		}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_puterr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmancero <jmancero@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mcassagn <mcassagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/03/27 20:25:58 by jmancero          #+#    #+#             */
-/*   Updated: 2014/03/27 20:29:18 by jmancero         ###   ########.fr       */
+/*   Created: 2014/03/27 17:20:37 by mcassagn          #+#    #+#             */
+/*   Updated: 2014/03/27 17:20:39 by mcassagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void	ft_puterr(char *s)
 {
 	if (s)
-		write(2, s, ft_strlen(s));
+		write (2, s, ft_strlen(s));
 }

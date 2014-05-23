@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_token.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmancero <jmancero@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mcassagn <mcassagn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/03/27 20:21:48 by jmancero          #+#    #+#             */
-/*   Updated: 2014/03/27 20:21:48 by jmancero         ###   ########.fr       */
+/*   Created: 2014/02/25 16:47:37 by mcassagn          #+#    #+#             */
+/*   Updated: 2014/03/27 21:27:27 by mcassagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,27 +52,24 @@ static char		get_word_str(char **str, char *token_str)
 	char		quote;
 
 	i = 0;
-	if ((quote = check_quote(str)) > 0)
+	quote = check_quote(str);
+	while (**str)
 	{
-		while (**str)
-		{
-			**str = (**str == 0x0a) ? ' ' : **str;
-			token_str[i++] = *(*str)++;
-			if (i != 1 && token_str[i - 1] == quote)
-				break ;
-		}
-	}
-	else
-	{
-		while (**str && is_ok_char(**str) && !is_op_char(**str))
-		{
-			**str = (**str == 0x0a) ? ' ' : **str;
-			*str = (**str == '\\') ? *(str + 1) : (*str);
-			token_str[i++] = *(*str)++;
-		}
+		**str = (**str == 0x0a) ? ' ' : **str;
+		token_str[i++] = *(*str)++;
+		if (quote && i != 1 && token_str[i - 1] == quote)
+			break ;
+		else if (!quote && (!is_ok_char(**str) || is_op_char(**str)))
+			break ;
+		*str = (**str == '\\') ? *str + 1 : (*str);
 	}
 	token_str[i] = '\0';
-	return (quote);
+	if (quote && token_str[0] == token_str[i - 1])
+		return (1);
+	else if (quote)
+		return (0);
+	else
+		return (1);
 }
 
 t_token			*get_token(char **str)
@@ -91,8 +88,8 @@ t_token			*get_token(char **str)
 		return (NULL);
 	else if (TYPE != word)
 		get_op_str(str, token->type, token_str);
-	else if (get_word_str(str, token_str))
-		(*str)++;
+	else if (get_word_str(str, token_str) == 0)
+		return (NULL);
 	token->str = ft_strdup(token_str);
 	if (token_str)
 		ft_strdel(&token_str);
@@ -109,7 +106,13 @@ t_token			*get_token_lst(char *str)
 	{
 		new_token = NULL;
 		if (!(new_token = get_token(&str)))
-			return (token_list);
+		{
+			token_lst_free(&token_list);
+			ft_putstr("Parse error near \' ");
+			ft_putchar(*(str - 1));
+			ft_putstr(" \'.\n");
+			return (NULL);
+		}
 		token_list = token_lst_add(new_token, token_list);
 		while (*str == ' ' || *str == '\t')
 			str++;

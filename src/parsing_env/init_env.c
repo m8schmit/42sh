@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_env.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mschmit <mschmit@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pdjamei <pdjamei@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/03/27 20:56:25 by mschmit           #+#    #+#             */
-/*   Updated: 2014/03/27 20:56:25 by mschmit          ###   ########.fr       */
+/*   Created: 2014/03/27 19:22:38 by pdjamei           #+#    #+#             */
+/*   Updated: 2014/03/27 22:25:33 by mcassagn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void				init_env(char **env)
 	gen = recup_gen();
 	if (!env || env[0] == NULL)
 	{
-		ft_putstr_fd("env NULL please retry\n", 2);
+		ft_putstr_fd("Unable to retrieve environment\n", 2);
 		exit(0);
 	}
 	else
