@@ -13,3 +13,5 @@ le buffer du multi-lignes
 parser: modifier gestion des ""
 
 ajouter un return -1 a strcmp (strncmp ?)
+
+gros bug on ne peux plus suprimer sur cette version... :/
