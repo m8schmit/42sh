@@ -6,7 +6,7 @@
 /*   By: apantiez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/23 17:06:21 by apantiez          #+#    #+#             */
-/*   Updated: 2014/05/26 15:27:33 by apantiez         ###   ########.fr       */
+/*   Updated: 2014/05/26 15:30:10 by apantiez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ void			ft_parse_and_exec(char *line, t_gen *gen)
 	}
 	if (tr != NULL)
 		ft_strdel(&tr);
-	if (line != NULL)
-		ft_strdel(&line);
+/*	if (line != NULL)
+		ft_strdel(&line);*/
 }
 
 void			updat_prompt(t_ps1 *ps1)
