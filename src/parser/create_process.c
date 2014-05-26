@@ -6,7 +6,7 @@
 /*   By: apantiez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/23 17:04:19 by apantiez          #+#    #+#             */
-/*   Updated: 2014/05/23 17:04:19 by apantiez         ###   ########.fr       */
+/*   Updated: 2014/05/26 14:49:36 by apantiez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ static char				**mysplit(char *str)
 
 	i = 0;
 	if (!str
-			|| !(ret = (char **)malloc(sizeof(char *) * (count_word(str) + 1))))
+			|| !(ret = (char **)malloc(sizeof(char *) * (count_word(str) + 8))))
 		return (NULL);
 	while (*str && !(k = 0))
 	{
@@ -109,3 +109,4 @@ t_process				*create_process(char *str)
 	new_process->prev = NULL;
 	return (new_process);
 }
+

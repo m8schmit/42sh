@@ -6,7 +6,7 @@
 /*   By: apantiez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/23 17:07:10 by apantiez          #+#    #+#             */
-/*   Updated: 2014/05/23 17:07:10 by apantiez         ###   ########.fr       */
+/*   Updated: 2014/05/26 14:42:56 by apantiez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,7 @@ void	updat_prompt(t_ps1 *ps1);
 void	free_split(char ***to_free);
 void	erase_list(t_builtin **list);
 void	ft_freetmpenv(t_gen *tmpenv);
+
+char	*strip_space(char *str);
 
 #endif
