@@ -6,7 +6,7 @@
 /*   By: apantiez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/23 17:06:21 by apantiez          #+#    #+#             */
-/*   Updated: 2014/05/24 18:49:47 by mschmit          ###   ########.fr       */
+/*   Updated: 2014/05/26 14:29:47 by apantiez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,17 @@ void			ft_parse_and_exec(char *line, t_gen *gen)
 	t_command	*command_lst;
 	char		*tr;
 
-	line = ft_strtrim(line);
-	tr = line;
+	tr = ft_strtrim(line);
+	ft_printf("line = %s-", tr);
+//	tr = line;
 	if (ft_strncmp(tr, "exit", 4) == 0 && (!tr[4] || ft_isspace(tr[4]) == 1))
 	{
 		ft_strdel(&tr);
 		destroy_gen();
 		exit(0);
 	}
-	ft_strdel(&tr);
+	if (tr != NULL)
+		ft_strdel(&tr);
 	command_lst = NULL;
 	if (line && line[0])
 	{
