@@ -12,4 +12,6 @@ parser: modifier gestion des "", verifier leur fermeture
 
 builtin exit
 
+erreur prompt a 1h de retard
+
 (manque l'autocompletion, gestion de tab)
