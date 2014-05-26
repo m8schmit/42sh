@@ -6,7 +6,7 @@
 /*   By: apantiez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/23 17:06:21 by apantiez          #+#    #+#             */
-/*   Updated: 2014/05/26 14:49:02 by apantiez         ###   ########.fr       */
+/*   Updated: 2014/05/26 15:02:20 by apantiez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,15 @@ void			ft_parse_and_exec(char *line, t_gen *gen)
 		destroy_gen();
 		exit(0);
 	}
-	if (tr != NULL)
-		ft_strdel(&tr);
 	command_lst = NULL;
-	if (line && line[0])
+	if (tr && tr[0])
 	{
-		command_lst = parser(line);
+		command_lst = parser(tr);
 		ft_command(command_lst, gen);
 		command_lst_free(command_lst);
 	}
+	if (tr != NULL)
+		ft_strdel(&tr);
 }
 
 void			updat_prompt(t_ps1 *ps1)
