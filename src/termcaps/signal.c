@@ -6,7 +6,7 @@
 /*   By: apantiez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/23 17:04:23 by apantiez          #+#    #+#             */
-/*   Updated: 2014/05/23 17:04:23 by apantiez         ###   ########.fr       */
+/*   Updated: 2014/05/26 18:04:15 by mschmit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,21 +32,6 @@ void	ft_sig_int(int x)
 	}
 	else
 		kill(gen->pid_fork, x);
-}
-
-void	ft_sig_tstp(int x)
-{
-	t_gen	*gen;
-
-	gen = recup_gen();
-	if (gen->pid_fork > 0)
-	{
-		ft_putstr_fd(bell, gen->term->fd);
-	}
-	else
-	{
-		kill(gen->pid_fork, x);
-	}
 }
 
 void	go_kill(t_gen *gen, char *buff)

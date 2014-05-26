@@ -6,7 +6,7 @@
 /*   By: apantiez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/23 17:04:23 by apantiez          #+#    #+#             */
-/*   Updated: 2014/05/23 17:04:23 by apantiez         ###   ########.fr       */
+/*   Updated: 2014/05/26 18:03:32 by mschmit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ void	close_term(void)
 void	init_sig(void)
 {
 	signal(SIGINT, ft_sig_int);
-	signal(SIGTSTP, ft_sig_tstp);
 }
 
 void	clear(t_gen *gen, char *buff)
