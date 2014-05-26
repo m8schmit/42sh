@@ -6,7 +6,7 @@
 /*   By: apantiez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/23 17:04:22 by apantiez          #+#    #+#             */
-/*   Updated: 2014/05/26 15:45:58 by apantiez         ###   ########.fr       */
+/*   Updated: 2014/05/26 15:48:34 by apantiez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ char		*ft_gettime(int format)
 ;	while (--i[0] >= format)
 	{
 		if (ft_strlen(t[2]) == 2)
-			t[4] = ft_joinfree(t[4], t[2], 3);
+			t[4] = ft_joinfree(t[4], t[2], 2);
 		else
 		{
 			t[4] = add_char(t[4], '0');
