@@ -6,7 +6,7 @@
 /*   By: apantiez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/23 17:04:19 by apantiez          #+#    #+#             */
-/*   Updated: 2014/05/26 14:49:36 by apantiez         ###   ########.fr       */
+/*   Updated: 2014/05/26 14:52:59 by apantiez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ static char				**mysplit(char *str)
 	while (*str && !(k = 0))
 	{
 		delim = ' ';
-		if (!(ret[i] = (char *)malloc(sizeof(char) * (mystrlen(str) + 1))))
+		if (!(ret[i] = (char *)malloc(sizeof(char) * (mystrlen(str) + 8))))
 			return (NULL);
 		if (*str == '\'' || *str == '\"')
 			delim = *str++;
