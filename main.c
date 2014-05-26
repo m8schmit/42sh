@@ -6,7 +6,7 @@
 /*   By: apantiez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/23 17:06:21 by apantiez          #+#    #+#             */
-/*   Updated: 2014/05/26 15:02:20 by apantiez         ###   ########.fr       */
+/*   Updated: 2014/05/26 15:27:33 by apantiez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ void			ft_parse_and_exec(char *line, t_gen *gen)
 	}
 	if (tr != NULL)
 		ft_strdel(&tr);
+	if (line != NULL)
+		ft_strdel(&line);
 }
 
 void			updat_prompt(t_ps1 *ps1)
@@ -110,42 +112,4 @@ int				main(int ac, char **av, char **env)
 	ft_rappel();
 	ft_putnbr(gen->ps1->len);
 	return (1);
-}
-
-char	*strip_space(char *str)
-{
-	int		size;
-	char	*new_str;
-	char	*sav_str;
-	int		flag;
-
-	flag = 1;
-	new_str = NULL;
-	if (str != NULL)
-	{
-		size = (ft_strlen(str) + 1);
-		new_str = (char *)malloc(sizeof(char) * size);
-		if (new_str == NULL)
-			return (NULL);
-		sav_str = new_str;
-		while (*str)
-		{
-			if (*str != ' ' && *str != '\t')
-			{
-				flag = 0;
-				*sav_str = *str;
-				sav_str++;
-			}
-			else if ((*str == ' ' || *str == '\t') && flag == 0)
-			{
-				flag = 1;
-				*sav_str = ' ';
-				sav_str++;
-			}
-			str++;
-		}
-		sav_str++;
-		*sav_str = '\0';
-	}
-	return (new_str);
 }
