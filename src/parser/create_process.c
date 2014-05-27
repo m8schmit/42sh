@@ -6,7 +6,7 @@
 /*   By: apantiez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/23 17:04:19 by apantiez          #+#    #+#             */
-/*   Updated: 2014/05/26 14:52:59 by apantiez         ###   ########.fr       */
+/*   Updated: 2014/05/27 14:17:27 by apantiez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ static char				**mysplit(char *str)
 	unsigned int		k;
 
 	i = 0;
+	ft_printf("str in mysplit = %s\n", str);
 	if (!str
 			|| !(ret = (char **)malloc(sizeof(char *) * (count_word(str) + 8))))
 		return (NULL);
