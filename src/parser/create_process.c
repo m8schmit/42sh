@@ -6,7 +6,7 @@
 /*   By: apantiez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/23 17:04:19 by apantiez          #+#    #+#             */
-/*   Updated: 2014/05/27 14:48:55 by apantiez         ###   ########.fr       */
+/*   Updated: 2014/05/27 17:45:43 by eboeuf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,4 +109,3 @@ t_process				*create_process(char *str)
 	new_process->prev = NULL;
 	return (new_process);
 }
-
