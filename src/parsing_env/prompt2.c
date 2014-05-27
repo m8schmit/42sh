@@ -6,7 +6,7 @@
 /*   By: mschmit <mschmit@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/27 16:22:29 by mschmit           #+#    #+#             */
-/*   Updated: 2014/05/27 16:32:48 by mschmit          ###   ########.fr       */
+/*   Updated: 2014/05/27 16:41:45 by mschmit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ void	free_time(char **time)
 		{
 			time[i] = NULL;
 			free(time[i]);
+			i++;
 		}
 }
