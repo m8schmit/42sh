@@ -6,7 +6,7 @@
 #    By: apantiez <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/05/23 17:05:50 by apantiez          #+#    #+#              #
-#    Updated: 2014/05/23 17:05:52 by apantiez         ###   ########.fr        #
+#    Updated: 2014/05/27 16:26:49 by mschmit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,6 +62,7 @@ SOURCE =	main.c \
 			$(SRCTERM)tc_move2.c \
 			$(SRCENV)init_env.c \
 			$(SRCENV)prompt.c \
+			$(SRCENV)prompt2.c \
 			$(SRCENV)destroy_gen.c \
 			$(SRCTERM)debug.c \
 			$(SRCPARSER)check_exp.c \

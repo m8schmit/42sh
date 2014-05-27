@@ -6,7 +6,7 @@
 /*   By: apantiez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/23 17:04:22 by apantiez          #+#    #+#             */
-/*   Updated: 2014/05/26 16:19:25 by apantiez         ###   ########.fr       */
+/*   Updated: 2014/05/27 16:35:40 by mschmit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,11 @@ char		*ft_gettime(int format)
 
 	i[0] = 3;
 	t[4] = NULL;
+	free_time(t);
 	gettimeofday(&tv, &tz);
 	t[0] = ft_itoa(tv.tv_sec % 60);
 	t[1] = ft_itoa((tv.tv_sec / 60) % 60);
-	t[2] = ft_itoa(((tv.tv_sec / 60) / 60) % 24 + 1);
+	t[2] = ft_itoa(((tv.tv_sec / 60) / 60) % 24 + 2);
 	t[3] = NULL;
 ;	while (--i[0] >= format)
 	{

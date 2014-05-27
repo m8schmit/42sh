@@ -6,7 +6,7 @@
 /*   By: apantiez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/23 17:07:10 by apantiez          #+#    #+#             */
-/*   Updated: 2014/05/26 14:42:56 by apantiez         ###   ########.fr       */
+/*   Updated: 2014/05/27 16:26:08 by mschmit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ int		get_on_ps1(char c, t_ps1 *ps1);
 char	*ft_getdir(int opt);
 char	*ft_gettime(int format);
 char	*add_char(char *str, char c);
+
+void	free_time(char **time);
 
 void	init_term();
 void	close_term();
