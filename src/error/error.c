@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apantiez <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: abosdeve <abosdeve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/23 17:04:18 by apantiez          #+#    #+#             */
-/*   Updated: 2014/05/23 17:04:18 by apantiez         ###   ########.fr       */
+/*   Updated: 2014/05/27 19:37:05 by abosdeve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ char	*strror2(int i)
 		return ("env error");
 	else if (i == EEXECV)
 		return ("error execve");
+	else if (i == EAGNUM)
+		return ("numeric argument required");
 	return ("unknown error");
 }
 

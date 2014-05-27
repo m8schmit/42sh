@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apantiez <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: abosdeve <abosdeve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/23 17:07:10 by apantiez          #+#    #+#             */
-/*   Updated: 2014/05/23 17:07:10 by apantiez         ###   ########.fr       */
+/*   Updated: 2014/05/27 19:37:06 by abosdeve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@
 # define ENOCMD 13
 # define EBDENV 14
 # define EEXECV 15
+# define EAGNUM 16
 
 # include "parser.h"
 
