@@ -6,7 +6,7 @@
 /*   By: apantiez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/23 17:04:17 by apantiez          #+#    #+#             */
-/*   Updated: 2014/05/23 17:04:17 by apantiez         ###   ########.fr       */
+/*   Updated: 2014/05/27 16:37:11 by apantiez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ void		ft_forkerror(t_process *p, t_gen *env)
 
 void		ft_fork(t_process *p, t_gen *env)
 {
+	pid_t	test;
+
 	if (ft_checkbuiltin(p, env) == 1)
 		env->status = ft_run_builtin(p, env);
 	else
@@ -42,11 +44,12 @@ void		ft_fork(t_process *p, t_gen *env)
 		}
 		else
 		{
-			if ((waitpid(env->pid_fork, &(env->status), 0)) == -1)
+			if ((test = waitpid(env->pid_fork, &(env->status), 0)) == -1)
 			{
 				env->ret = EEXECV;
 				error(p, 0);
 			}
+			ft_printf("return of wait = %d, status = %d, pid = %d\n", test, WEXITSTATUS(env->status), env->pid_fork);
 		}
 	}
 	if (env->path != NULL)

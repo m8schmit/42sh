@@ -6,7 +6,7 @@
 /*   By: apantiez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/23 17:04:15 by apantiez          #+#    #+#             */
-/*   Updated: 2014/05/23 17:04:15 by apantiez         ###   ########.fr       */
+/*   Updated: 2014/05/27 17:07:30 by apantiez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	ft_builtin(t_process *p, t_gen *env)
 	if (ft_strcmp(p->av[0], "env") == 0)
 		ft_env(p, env);
 	else if (ft_strcmp(p->av[0], "echo") == 0)
-		ft_echo(p);
+		ft_echo(p, env);
 	else if (ft_strcmp(p->av[0], "help") == 0)
 		ft_help(p, env->builtin);
 	else if (len == 1)

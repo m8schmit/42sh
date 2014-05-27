@@ -6,7 +6,7 @@
 /*   By: apantiez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/23 17:04:15 by apantiez          #+#    #+#             */
-/*   Updated: 2014/05/23 17:04:15 by apantiez         ###   ########.fr       */
+/*   Updated: 2014/05/27 17:16:04 by apantiez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,26 @@
 #include "builtin.h"
 #include "parser.h"
 
-void	ft_echo(t_process *p)
+void		print_echo(char *str, int status)
+{
+	while (*str)
+	{
+		if (*str == '$')
+		{
+			str++;
+			if (*str == '?')
+			{
+				str++;
+				ft_printf("%d", WEXITSTATUS(status));
+			}
+		}
+		else
+			ft_putchar(*str);
+		str++;
+	}
+}
+
+void	ft_echo(t_process *p, t_gen *env)
 {
 	int	i;
 	int	n;
@@ -28,11 +47,13 @@ void	ft_echo(t_process *p)
 		if (p->av[i + 1] != NULL)
 			while (p->av[i] && p->av[i + 1])
 			{
-				ft_dprintf(p->FD_OUT, "%s ", p->av[i]);
+
+				print_echo(p->av[i], env->status);
+				ft_putchar(' ');
 				i++;
 			}
 		if (p->av[i])
-			ft_dprintf(p->FD_OUT, "%s", p->av[i]);
+			print_echo(p->av[i], env->status);
 		if (n == 0)
 			write(p->FD_OUT, "\n", 1);
 	}

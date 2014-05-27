@@ -6,7 +6,7 @@
 /*   By: apantiez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/23 17:04:17 by apantiez          #+#    #+#             */
-/*   Updated: 2014/05/23 17:04:17 by apantiez         ###   ########.fr       */
+/*   Updated: 2014/05/27 15:43:22 by apantiez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void		ft_command(t_command *com, t_gen *env)
 				job = get_job_next(job, NEED_NO_SUCCESS);
 			else if (env->status == 0 && job->need_success == NEED_SUCCESS)
 				job = job->next;
-			else if ((env->status == 256 || env->status == 65280)
+			else if ((env->status != 0)
 					&& job->need_success == NEED_NO_SUCCESS)
 				job = job->next;
 			else if (env->status == 0 && job->need_success == NEED_NO_SUCCESS)
