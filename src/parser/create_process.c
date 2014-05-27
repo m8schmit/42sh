@@ -6,7 +6,7 @@
 /*   By: apantiez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/23 17:04:19 by apantiez          #+#    #+#             */
-/*   Updated: 2014/05/27 14:43:40 by apantiez         ###   ########.fr       */
+/*   Updated: 2014/05/27 14:46:59 by apantiez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,13 +77,13 @@ static char				**mysplit(char *str)
 	i = 0;
 	ft_printf("str in mysplit = %s\n, word count = %d\n", str, count_word(str));
 	if (!str
-			|| !(ret = (char **)malloc(sizeof(char *) * (count_word(str) + 8))))
+			|| !(ret = (char **)malloc(sizeof(char *) * (count_word(str) + 1))))
 		return (NULL);
 	while (*str && !(k = 0))
 	{
 		delim = ' ';
 		ft_printf("mystrlen = %d\n", mystrlen(str));
-		if (!(ret[i] = (char *)malloc(sizeof(char) * (mystrlen(str) + 8))))
+		if (!(ret[i] = (char *)malloc(sizeof(char) * (mystrlen(str) + 1))))
 			return (NULL);
 		if (*str == '\'' || *str == '\"')
 			delim = *str++;
