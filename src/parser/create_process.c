@@ -6,7 +6,7 @@
 /*   By: apantiez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/23 17:04:19 by apantiez          #+#    #+#             */
-/*   Updated: 2014/05/27 14:17:27 by apantiez         ###   ########.fr       */
+/*   Updated: 2014/05/27 14:43:40 by apantiez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,13 @@ static unsigned int		mystrlen(char *s)
 	quote = 0;
 	if (*s == '\'' || *s == '\"')
 	{
+		ft_printf("in \" or \'");
 		quote = *s;
-		while (*s++ != quote)
+		while (*++s != quote)
+		{
+			ft_printf("not \"");
 			size++;
+		}
 	}
 	else
 	{
@@ -71,13 +75,14 @@ static char				**mysplit(char *str)
 	unsigned int		k;
 
 	i = 0;
-	ft_printf("str in mysplit = %s\n", str);
+	ft_printf("str in mysplit = %s\n, word count = %d\n", str, count_word(str));
 	if (!str
 			|| !(ret = (char **)malloc(sizeof(char *) * (count_word(str) + 8))))
 		return (NULL);
 	while (*str && !(k = 0))
 	{
 		delim = ' ';
+		ft_printf("mystrlen = %d\n", mystrlen(str));
 		if (!(ret[i] = (char *)malloc(sizeof(char) * (mystrlen(str) + 8))))
 			return (NULL);
 		if (*str == '\'' || *str == '\"')
