@@ -6,7 +6,7 @@
 /*   By: apantiez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/23 17:04:15 by apantiez          #+#    #+#             */
-/*   Updated: 2014/05/26 16:26:55 by mschmit          ###   ########.fr       */
+/*   Updated: 2014/05/27 17:39:58 by mschmit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,20 +73,23 @@ static t_gen	*ft_docd(char *path, t_gen *env, int ih, int ip)
 	char		*s;
 	char		*tmp;
 
-	tmp = ft_dellast(env->env[ih] + 5);
-	if (path[0] == '~' && path[1] == '/')
-		s = ft_red(path + 2, env->env[ih] + 5);
-	else if (path[0] == '~')
-		s = ft_red(path + 1, tmp);
-	else if (path[0] == '/')
-		s = ft_red(path + 1, NULL);
-	else if (ft_strcmp(path, "-") == 0)
-		s = ft_strdup(&(env->env[ft_found("OLDPWD", env)][7]));
-	else
-		s = ft_red(path, env->env[ip] + 5);
-	ft_checkaccess(s, env, ip);
-	free(s);
-	free(tmp);
+	if (path[0] != '.')
+	{
+		tmp = ft_dellast(env->env[ih] + 5);
+		if (path[0] == '~' && path[1] == '/')
+			s = ft_red(path + 2, env->env[ih] + 5);
+		else if (path[0] == '~')
+			s = ft_red(path + 1, tmp);
+		else if (path[0] == '/')
+			s = ft_red(path + 1, NULL);
+		else if (ft_strcmp(path, "-") == 0)
+			s = ft_strdup(&(env->env[ft_found("OLDPWD", env)][7]));
+		else
+			s = ft_red(path, env->env[ip] + 5);
+		ft_checkaccess(s, env, ip);
+		free(s);
+		free(tmp);
+	}
 	return (env);
 }
 
