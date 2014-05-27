@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apantiez <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: abosdeve <abosdeve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/23 17:06:21 by apantiez          #+#    #+#             */
-/*   Updated: 2014/05/27 14:55:36 by apantiez         ###   ########.fr       */
+/*   Updated: 2014/05/27 22:17:34 by abosdeve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,6 @@ void			ft_parse_and_exec(char *line, t_gen *gen)
 	char		*tr;
 
 	tr = ft_strtrim(line);
-	if (ft_strncmp(tr, "exit", 4) == 0 && (!tr[4] || ft_isspace(tr[4]) == 1))
-	{
-		ft_strdel(&tr);
-		destroy_gen();
-		exit(0);
-	}
 	command_lst = NULL;
 	if (tr && tr[0])
 	{

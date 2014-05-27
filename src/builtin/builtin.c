@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   builtin.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apantiez <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: abosdeve <abosdeve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/23 17:04:15 by apantiez          #+#    #+#             */
-/*   Updated: 2014/05/26 15:37:55 by mschmit          ###   ########.fr       */
+/*   Updated: 2014/05/27 22:10:22 by abosdeve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,12 @@ t_builtin	**init_listbuiltin5(t_builtin **l)
 	l[7]->help = ft_strcat(l[7]->help, "tin commands.\n");
 	if (!(l[8] = (t_builtin *)malloc(sizeof(t_builtin))))
 		return (NULL);
-	l[8]->name = NULL;
-	l[8]->help = NULL;
+	l[8]->name = ft_strdup("exit");
+	l[8]->help = ft_strdup("USAGE :\nexit [value]\n\nDESCRIPTION :\nexit 42sh\n");
+	if (!(l[9] = (t_builtin *)malloc(sizeof(t_builtin))))
+		return (NULL);
+	l[9]->name = NULL;
+	l[9]->help = NULL;
 	return (l);
 }
 
@@ -115,7 +119,7 @@ t_builtin	**init_listbuiltin(void)
 {
 	t_builtin	**l;
 
-	if (!(l = (t_builtin **)malloc(sizeof(t_builtin *) * 9)))
+	if (!(l = (t_builtin **)malloc(sizeof(t_builtin *) * 10)))
 		return (NULL);
 	if (!(l[0] = (t_builtin *)malloc(sizeof(t_builtin))))
 		return (NULL);
