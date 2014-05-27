@@ -6,7 +6,7 @@
 /*   By: apantiez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/23 17:06:21 by apantiez          #+#    #+#             */
-/*   Updated: 2014/05/26 15:30:10 by apantiez         ###   ########.fr       */
+/*   Updated: 2014/05/27 14:11:12 by apantiez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void			ft_parse_and_exec(char *line, t_gen *gen)
 	if (tr && tr[0])
 	{
 		command_lst = parser(tr);
+		command_lst_print(command_lst);
 		ft_command(command_lst, gen);
 		command_lst_free(command_lst);
 	}
