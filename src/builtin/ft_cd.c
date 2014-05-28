@@ -6,7 +6,7 @@
 /*   By: apantiez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/23 17:04:15 by apantiez          #+#    #+#             */
-/*   Updated: 2014/05/27 18:08:37 by mschmit          ###   ########.fr       */
+/*   Updated: 2014/05/28 14:53:07 by mschmit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,6 @@ static t_gen	*ft_docd(char *path, t_gen *env, int ih, int ip)
 
 	if (path[0] == '.' && path[1] == '\0')
 		return (env);
-	else if (path[0] == '.')
-		tmp_path = path + 2;
 	else
 		tmp_path = path;
 	tmp = ft_dellast(env->env[ih] + 5);
