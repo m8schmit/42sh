@@ -6,7 +6,7 @@
 /*   By: apantiez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/23 17:04:22 by apantiez          #+#    #+#             */
-/*   Updated: 2014/05/23 17:04:22 by apantiez         ###   ########.fr       */
+/*   Updated: 2014/05/28 13:59:19 by apantiez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,12 @@ char				*ft_getenv(char *to_search)
 	return (gen->env[i] + ft_strlen(to_search));
 }
 
+/************************/
+
+t_gen			*check_env(t_gen *gen);
+
+/*************************/
+
 void				init_env(char **env)
 {
 	t_gen			*gen;
@@ -78,8 +84,12 @@ void				init_env(char **env)
 	gen = recup_gen();
 	if (!env || env[0] == NULL)
 	{
-		ft_putstr_fd("Unable to retrieve environment\n", 2);
-		exit(0);
+		gen->env = (char **)malloc(sizeof(char *) * 5);
+		check_env(gen);
+		while (i < 5)
+			gen->env[i++] = NULL;
+		ft_putstr_fd("The environment to lack of information, 42sh will add.\n", 2);
+		return ;
 	}
 	else
 		gen->env_orig = env;
