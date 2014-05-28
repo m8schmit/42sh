@@ -6,12 +6,13 @@
 /*   By: apantiez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/23 17:04:22 by apantiez          #+#    #+#             */
-/*   Updated: 2014/05/28 13:59:19 by apantiez         ###   ########.fr       */
+/*   Updated: 2014/05/28 14:58:07 by apantiez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sh.h"
 #include "builtin.h"
+#include "exec.h"
 
 void				free_gen(void)
 {
@@ -69,12 +70,6 @@ char				*ft_getenv(char *to_search)
 	return (gen->env[i] + ft_strlen(to_search));
 }
 
-/************************/
-
-t_gen			*check_env(t_gen *gen);
-
-/*************************/
-
 void				init_env(char **env)
 {
 	t_gen			*gen;
@@ -99,4 +94,28 @@ void				init_env(char **env)
 	gen->env[i] = NULL;
 	while (--i >= 0)
 		gen->env[i] = ft_strdup(gen->env_orig[i]);
+}
+
+t_gen				*check_env(t_gen *gen)
+{
+	int				chdir_return;
+
+	if (!get_var_env("PATH", gen->env))
+		gen = ft_setenv("PATH",
+				"/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin",
+				0, gen);
+	if (!get_var_env("HOME", gen->env))
+		gen = ft_setenv("HOME", "/home", 0, gen);
+	if (!get_var_env("PWD", gen->env))
+	{
+		gen = ft_setenv("PWD", "/", 0, gen);
+		(ft_strcmp(gen->env[ft_found("PWD", gen)] + 4, "/"));
+		if ((chdir_return = chdir("/")) == -1)
+			return (NULL);
+	}
+	if (!get_var_env("OLDPWD", gen->env))
+		gen = ft_setenv("OLDPWD", "/", 0, gen);
+	if (!get_var_env("USER", gen->env))
+		gen = ft_setenv("USER", "Anonymous", 0, gen);
+	return (gen);
 }

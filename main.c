@@ -6,7 +6,7 @@
 /*   By: abosdeve <abosdeve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/23 17:06:21 by apantiez          #+#    #+#             */
-/*   Updated: 2014/05/28 13:46:52 by apantiez         ###   ########.fr       */
+/*   Updated: 2014/05/28 14:58:39 by apantiez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,7 @@
 #include "sh.h"
 #include "parser.h"
 #include "builtin.h"
-#include "exec.h"
 #include "command.h"
-
-t_gen			*check_env(t_gen *gen);
 
 void			ft_parse_and_exec(char *line, t_gen *gen)
 {
@@ -108,26 +105,4 @@ int				main(int ac, char **av, char **env)
 	ft_rappel();
 	ft_putnbr(gen->ps1->len);
 	return (1);
-}
-
-t_gen			*check_env(t_gen *gen)
-{
-	int			chdir_return;
-
-	if (!get_var_env("PATH", gen->env))
-		gen = ft_setenv("PATH",
-				"/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin",
-				0, gen);
-	if (!get_var_env("HOME", gen->env))
-		gen = ft_setenv("HOME", "/home", 0, gen);
-	if (!get_var_env("PWD", gen->env))
-	{
-		gen = ft_setenv("PWD", "/", 0, gen);
-		(ft_strcmp(gen->env[ft_found("PWD", gen)] + 4, "/"));
-		if ((chdir_return = chdir("/")) == -1)
-			return (NULL);
-	}
-	if (!get_var_env("OLDPWD", gen->env))
-		gen = ft_setenv("OLDPWD", "/", 0, gen);
-	return (gen);
 }

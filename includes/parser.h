@@ -6,7 +6,7 @@
 /*   By: apantiez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/23 17:07:10 by apantiez          #+#    #+#             */
-/*   Updated: 2014/05/23 17:07:10 by apantiez         ###   ########.fr       */
+/*   Updated: 2014/05/28 14:57:16 by apantiez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,5 +115,6 @@ void					command_lst_print(t_command *command_lst);
 void					job_lst_print(t_job *job_lst);
 void					process_lst_print(t_process *process_lst);
 t_bool					parse_error(char *str);
+t_gen					*check_env(t_gen *gen);
 
 #endif
