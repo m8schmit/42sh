@@ -6,7 +6,7 @@
 /*   By: apantiez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/23 17:07:10 by apantiez          #+#    #+#             */
-/*   Updated: 2014/05/27 16:26:08 by mschmit          ###   ########.fr       */
+/*   Updated: 2014/05/28 15:03:49 by apantiez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,6 @@ void	erase_list(t_builtin **list);
 void	ft_freetmpenv(t_gen *tmpenv);
 
 char	*strip_space(char *str);
+t_gen	*check_env(t_gen *gen);
 
 #endif

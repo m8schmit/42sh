@@ -6,7 +6,7 @@
 /*   By: apantiez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/23 17:04:22 by apantiez          #+#    #+#             */
-/*   Updated: 2014/05/28 14:58:07 by apantiez         ###   ########.fr       */
+/*   Updated: 2014/05/28 15:02:00 by apantiez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,8 @@ void				init_env(char **env)
 		check_env(gen);
 		while (i < 5)
 			gen->env[i++] = NULL;
-		ft_putstr_fd("The environment to lack of information, 42sh will add.\n", 2);
+		ft_putstr_fd("The environment to lack of information, 42sh will add.\n",
+							2);
 		return ;
 	}
 	else
