@@ -6,7 +6,7 @@
 /*   By: abosdeve <abosdeve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/23 17:07:10 by apantiez          #+#    #+#             */
-/*   Updated: 2014/05/27 21:44:50 by abosdeve         ###   ########.fr       */
+/*   Updated: 2014/06/03 14:01:50 by apantiez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@
 # define EBDENV 14
 # define EEXECV 15
 # define EAGNUM 16
+# define EMQNOT 17
 
 # include "parser.h"
 

@@ -6,7 +6,7 @@
 /*   By: abosdeve <abosdeve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/23 17:04:18 by apantiez          #+#    #+#             */
-/*   Updated: 2014/05/27 21:44:59 by abosdeve         ###   ########.fr       */
+/*   Updated: 2014/06/03 14:06:13 by apantiez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ char	*strror2(int i)
 		return ("error execve");
 	else if (i == EAGNUM)
 		return ("numeric argument required");
+	else if (i == EMQNOT)
+		return ("missing quote or command");
 	return ("unknown error");
 }
 

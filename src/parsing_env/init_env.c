@@ -6,7 +6,7 @@
 /*   By: apantiez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/23 17:04:22 by apantiez          #+#    #+#             */
-/*   Updated: 2014/05/28 15:02:00 by apantiez         ###   ########.fr       */
+/*   Updated: 2014/05/28 15:06:27 by apantiez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,9 +79,9 @@ void				init_env(char **env)
 	gen = recup_gen();
 	if (!env || env[0] == NULL)
 	{
-		gen->env = (char **)malloc(sizeof(char *) * 5);
+		gen->env = (char **)malloc(sizeof(char *) * 6);
 		check_env(gen);
-		while (i < 5)
+		while (i < 6)
 			gen->env[i++] = NULL;
 		ft_putstr_fd("The environment to lack of information, 42sh will add.\n",
 							2);

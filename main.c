@@ -6,16 +6,19 @@
 /*   By: abosdeve <abosdeve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/23 17:06:21 by apantiez          #+#    #+#             */
-/*   Updated: 2014/05/28 14:58:39 by apantiez         ###   ########.fr       */
+/*   Updated: 2014/06/03 14:08:16 by apantiez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <libft.h>
 #include "sh.h"
+#include "error.h"
 #include "parser.h"
 #include "builtin.h"
 #include "command.h"
+
+int				check_quote(char *tr);
 
 void			ft_parse_and_exec(char *line, t_gen *gen)
 {
@@ -26,12 +29,40 @@ void			ft_parse_and_exec(char *line, t_gen *gen)
 	command_lst = NULL;
 	if (tr && tr[0])
 	{
-		command_lst = parser(tr);
-		ft_command(command_lst, gen);
-		command_lst_free(command_lst);
+		if ((check_quote(tr)) == 1)
+		{
+			command_lst = parser(tr);
+			ft_command(command_lst, gen);
+			command_lst_free(command_lst);
+		}
+		else
+			ft_dprintf(2, "42sh : %s\n", strror(EMQNOT));
 	}
 	if (tr != NULL)
 		ft_strdel(&tr);
+}
+
+int				check_quote(char *tr)
+{
+	int			check;
+	int			check_char;
+
+	check = 0;
+	check_char = 0;
+	while (*tr)
+	{
+		if (*tr == '\'' || *tr == '\"')
+		{
+			check++;
+		}
+		else if (ft_isalnum(*tr))
+			check_char++;
+		tr++;
+	}
+	if ((check % 2) != 0 || check_char == 0)
+		return (0);
+	else
+		return (1);
 }
 
 void			updat_prompt(t_ps1 *ps1)
