@@ -6,7 +6,7 @@
 /*   By: abosdeve <abosdeve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/23 17:04:15 by apantiez          #+#    #+#             */
-/*   Updated: 2014/05/27 22:10:18 by abosdeve         ###   ########.fr       */
+/*   Updated: 2014/06/03 16:18:22 by mschmit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,8 @@ void	ft_builtin(t_process *p, t_gen *env)
 	len = ft_strstrlen(p->av);
 	if (ft_strcmp(p->av[0], "env") == 0)
 		ft_env(p, env);
+	else if (ft_strcmp(p->av[0], "history") == 0)
+		ft_print_hist();
 	else if (ft_strcmp(p->av[0], "echo") == 0)
 		ft_echo(p, env);
 	else if (ft_strcmp(p->av[0], "help") == 0)

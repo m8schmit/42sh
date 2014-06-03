@@ -6,7 +6,7 @@
 #    By: abosdeve <abosdeve@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/05/23 17:05:50 by apantiez          #+#    #+#              #
-#    Updated: 2014/05/27 21:37:00 by abosdeve         ###   ########.fr        #
+#    Updated: 2014/06/03 16:22:27 by mschmit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,6 +40,7 @@ SOURCE =	main.c \
 			$(SRCBULT)ft_help.c \
 			$(SRCBULT)ft_setenv.c \
 			$(SRCBULT)ft_exit.c \
+			$(SRCBULT)ft_history.c \
 			$(SRCCMD)ft_command.c \
 			$(SRCCMD)ft_close_pipe.c \
 			$(SRCCMD)ft_fork.c \

@@ -6,7 +6,7 @@
 /*   By: abosdeve <abosdeve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/23 17:07:09 by apantiez          #+#    #+#             */
-/*   Updated: 2014/05/27 22:17:37 by abosdeve         ###   ########.fr       */
+/*   Updated: 2014/06/03 16:23:29 by mschmit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,6 @@ t_gen		*ft_cd(char *path, t_gen *env);
 void		ft_help(t_process *p, t_builtin **builtin);
 void		free_split(char ***to_free);
 void		ft_exit();
+void		ft_print_hist();
 
 #endif
